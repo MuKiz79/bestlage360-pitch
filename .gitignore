@@ -1,5 +1,5 @@
-# nur index.html + referenzierte Assets gehoeren ins Repo
-*.png
+/*.png
 preview-*.png
 scratchpad/
 .DS_Store
+assets/brand/villa-klassik.jpg

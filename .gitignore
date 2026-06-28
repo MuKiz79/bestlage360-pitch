@@ -1,0 +1,5 @@
+# nur index.html + referenzierte Assets gehoeren ins Repo
+*.png
+preview-*.png
+scratchpad/
+.DS_Store

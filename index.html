@@ -95,7 +95,7 @@
   .brand{display:flex;flex-direction:column;line-height:1}
   .brand b{font-family:"Inter",sans-serif;font-weight:700;font-size:1.16rem;letter-spacing:.16em;color:var(--green)}
   .brand b i{font-style:normal;color:var(--gold-deep)}
-  .brand span{font-size:.58rem;letter-spacing:.46em;color:var(--gold-deep);font-weight:600;margin-top:5px}
+  .brand span{font-size:.64rem;letter-spacing:.34em;color:#6b521f;font-weight:700;margin-top:5px}
   .nav-links{display:flex;gap:24px;align-items:center}
   .nav-links a{position:relative;font-size:.8rem;letter-spacing:.04em;color:var(--muted);font-weight:500;transition:color .2s;white-space:nowrap;text-transform:uppercase}
   .nav-links a:hover{color:var(--green)}
@@ -362,6 +362,44 @@
   .foot-pitch{margin-top:20px;font-size:.78rem;color:rgba(245,241,232,.5);line-height:1.65;max-width:94ch;position:relative}
   .foot-pitch b{color:var(--gold-2)}
 
+  /* ===== Hero-Eyebrow deutlicher sichtbar ===== */
+  .hero .eyebrow{font-size:.78rem;letter-spacing:.22em;color:#6b521f}
+
+  /* ===== Mobile-Navigation (Burger + Overlay-Menü) ===== */
+  .burger{display:none;background:none;border:1px solid var(--line);border-radius:9px;width:46px;height:42px;cursor:pointer;padding:0;position:relative}
+  .burger span{position:absolute;left:13px;top:20px;width:20px;height:2px;background:var(--green);border-radius:2px}
+  .burger span::before,.burger span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--green);border-radius:2px}
+  .burger span::before{top:-6px}.burger span::after{top:6px}
+  .mnav{position:fixed;inset:0;z-index:80;background:linear-gradient(170deg,var(--green-2),var(--green));color:var(--cream);transform:translateY(-100%);transition:transform .4s var(--ease);padding:26px clamp(24px,6vw,40px);visibility:hidden;display:flex;flex-direction:column}
+  .mnav.open{transform:none;visibility:visible}
+  .mnav .mtop{display:flex;align-items:center;justify-content:space-between}
+  .mnav .mbrand b{font-family:"Inter",sans-serif;font-weight:700;letter-spacing:.16em;font-size:1.1rem;color:var(--cream)}
+  .mnav .mbrand b i{font-style:normal;color:var(--gold-2)}
+  .mnav .mx{background:none;border:none;color:var(--cream);font-size:2rem;line-height:1;cursor:pointer;padding:0 4px}
+  .mnav nav{display:flex;flex-direction:column;margin-top:14px;overflow:auto}
+  .mnav nav a{padding:13px 0;border-bottom:1px solid var(--line-d);font-family:"Cormorant Garamond",serif;font-size:1.5rem;color:var(--cream)}
+  .mnav .mcta{margin-top:24px;display:flex;flex-direction:column;gap:14px}
+  .mnav .mcta .btn{justify-content:center}
+  .mnav .mphone{color:var(--gold-2);font-weight:600;font-size:1.1rem;text-align:center}
+  body.menu-open{overflow:hidden}
+
+  /* ===== Mobile Action-Bar (fix unten) ===== */
+  .mbar{display:none}
+  @media (max-width:1180px){ .nav-cta{display:none} .burger{display:block} }
+  @media (max-width:860px){
+    section{padding:var(--s10) 0}
+    .hero{padding-top:var(--s4)}
+    .hero h1{font-size:clamp(2.7rem,8.5vw,3.6rem);margin:18px 0 18px}
+    .hero .lede,.lede{font-size:1.04rem}
+    .sec-head h2{font-size:clamp(1.95rem,7vw,2.6rem)}
+    .ribbon{font-size:.68rem}
+    body{padding-bottom:68px}
+    .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(0,27,17,.97);backdrop-filter:saturate(140%) blur(10px);border-top:1px solid rgba(189,154,94,.4)}
+    .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:17px 8px;font-size:.95rem;font-weight:600;color:var(--cream);letter-spacing:.01em}
+    .mbar a.call{border-right:1px solid rgba(189,154,94,.3)}
+    .mbar a.wert{background:var(--gold-deep);color:#fff}
+  }
+
   .js [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
   .js [data-reveal].in{opacity:1;transform:none}
   .js [data-stagger]>*{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
@@ -397,8 +435,31 @@
       <a class="nav-phone" href="tel:+496978808820">069 788 088 20</a>
       <a class="nav-pill" href="#wert">Wert ermitteln</a>
     </div>
+    <button class="burger" id="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mnav"><span></span></button>
   </div>
 </header>
+
+<div class="mnav" id="mnav" aria-hidden="true">
+  <div class="mtop">
+    <span class="mbrand"><b>BESTLAGE<i>360</i></b></span>
+    <button class="mx" id="mclose" type="button" aria-label="Menü schließen">×</button>
+  </div>
+  <nav aria-label="Mobile Navigation">
+    <a href="#award">Auszeichnungen</a>
+    <a href="#highlight">Highlight</a>
+    <a href="#referenzen">Referenzen</a>
+    <a href="#inszenierung">Marketing</a>
+    <a href="#brightside">Bright Side</a>
+    <a href="#person">Edin Cobic</a>
+    <a href="#ki">KI-Sichtbarkeit</a>
+    <a href="#instagram">Instagram</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+  <div class="mcta">
+    <a class="btn btn-gold" href="#wert">Wert ermitteln</a>
+    <a class="mphone" href="tel:+496978808820">069 788 088 20</a>
+  </div>
+</div>
 
 <main>
   <!-- HERO -->
@@ -837,8 +898,24 @@
   </div>
 </footer>
 
+<div class="mbar" aria-label="Schnellkontakt">
+  <a class="call" href="tel:+496978808820">☎&nbsp; Anrufen</a>
+  <a class="wert" href="#wert">Wert ermitteln <span class="arrow">→</span></a>
+</div>
+
 <script>
   var REDUCE=window.matchMedia&&window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+  // Mobile-Menü (Burger)
+  (function(){
+    var burger=document.getElementById('burger'),mnav=document.getElementById('mnav'),mclose=document.getElementById('mclose');
+    if(!burger||!mnav) return;
+    function setOpen(o){mnav.classList.toggle('open',o);document.body.classList.toggle('menu-open',o);burger.setAttribute('aria-expanded',o?'true':'false');mnav.setAttribute('aria-hidden',o?'false':'true');}
+    burger.addEventListener('click',function(){setOpen(!mnav.classList.contains('open'));});
+    if(mclose) mclose.addEventListener('click',function(){setOpen(false);});
+    mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setOpen(false);});});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')setOpen(false);});
+  })();
 
   var header=document.querySelector("header"), ticking=false;
   function applyHeader(){header.classList.toggle("solid",window.scrollY>40);ticking=false;}

@@ -185,6 +185,23 @@
   .mkt img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
   .mkt:hover img{transform:scale(1.05)}
   @media (max-width:880px){.mkt-grid{grid-template-columns:repeat(2,1fr)}}
+  /* Video-Facade */
+  .video{position:relative;margin-top:clamp(16px,2vw,22px);aspect-ratio:16/9;border-radius:6px;overflow:hidden;border:1px solid var(--line);cursor:pointer;background:var(--green)}
+  .video img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+  .video:hover img{transform:scale(1.03)}
+  .video .vplay{position:absolute;inset:0;margin:auto;width:74px;height:74px;border:none;border-radius:50%;background:rgba(0,36,22,.8);color:#fff;font-size:1.3rem;display:grid;place-items:center;cursor:pointer;transition:background .25s,transform .25s;padding-left:5px}
+  .video:hover .vplay{background:var(--green);transform:scale(1.06)}
+  .video .vcap{position:absolute;left:18px;bottom:14px;color:#fff;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.7);pointer-events:none}
+  .video iframe{width:100%;height:100%;border:0;display:block}
+  /* Bright Side */
+  .bs{background:var(--cream-3);border-top:1px solid var(--line)}
+  .bs-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,5vw,72px);align-items:center}
+  .bs-pic{position:relative;border-radius:6px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/9}
+  .bs-pic img{width:100%;height:100%;object-fit:cover}
+  .bs-pic .tag{position:absolute;left:18px;bottom:14px;color:#fff;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+  .bs-facts{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0 24px}
+  .bs-facts span{font-size:.8rem;color:var(--green);border:1px solid var(--line);border-radius:999px;padding:7px 14px;background:var(--card)}
+  @media (max-width:880px){.bs-grid{grid-template-columns:1fr;gap:30px}.bs-pic{order:-1}}
 
   /* Person */
   #person{background:var(--cream-2);border-top:1px solid var(--line)}
@@ -421,7 +438,7 @@
         <span class="crit">Objektive Beratung</span>
         <span class="crit">Tiefe Marktkenntnis</span>
       </div>
-      <p class="partners" data-reveal>Weitere Partnerschaften &amp; Mitgliedschaften: <b>ImmoScout24 Premium-Partner</b> · <b>IMMOGENO Business-Partner</b> · <b>Makler-Lotse</b> · Finanzierung mit <b>Interhyp</b></p>
+      <p class="partners" data-reveal>Weitere Partnerschaften &amp; Mitgliedschaften: <b>ImmoScout24 Premium-Partner</b> · <b>IMMOGENO Business-Partner</b> · <b>Makler-Lotse</b> · <b>geprüfte Fortbildung</b> (§15b MaBV) · Finanzierung mit <b>Interhyp</b></p>
     </div>
   </section>
 
@@ -494,6 +511,34 @@
         <div class="mkt"><img src="assets/listings/mkt3.jpg" alt="Professionelle Immobilien-Fotografie von BESTLAGE360" loading="lazy"></div>
         <div class="mkt"><img src="assets/listings/mkt4.jpg" alt="Vermarktung einer Immobilie durch BESTLAGE360" loading="lazy"></div>
       </div>
+      <div class="video" data-yt="HWp_MpBvk3Y" data-reveal>
+        <img src="assets/listings/video-poster.jpg" alt="Objektvideo von BESTLAGE360 — erfolgreich vermittelt">
+        <button class="vplay" type="button" aria-label="Objektvideo abspielen">▶</button>
+        <span class="vcap">Objektvideo · Erfolgreich vermittelt</span>
+      </div>
+      <p class="note">Eine gute Immobilie verdient mehr als ein Foto: professionelle Aufnahmen, hochwertige Exposés und Objektvideos — aus einer Hand.</p>
+    </div>
+  </section>
+
+  <!-- BRIGHT SIDE -->
+  <section id="brightside" class="bs">
+    <div class="wrap bs-grid">
+      <div data-reveal>
+        <div class="kick"><span class="eyebrow">Projektvermietung · Referenz-Projekt</span></div>
+        <h2 style="font-size:clamp(2rem,3.6vw,2.9rem)">Bright Side.</h2>
+        <p class="lede">Unser Neubau-Projekt im Frankfurter Gallusviertel — der Beleg, dass wir ganze Vorhaben aus einer Hand vermarkten, nicht nur Einzelobjekte.</p>
+        <div class="bs-facts">
+          <span>356 Wohneinheiten</span>
+          <span>1–4 Zimmer · Micro-Apartments</span>
+          <span>Dachgarten mit Skyline-Blick</span>
+          <span>Gallusviertel</span>
+        </div>
+        <a class="tlink" href="https://www.bestlage360.de/bright-side/" target="_blank" rel="noopener">Zum Projekt Bright Side →</a>
+      </div>
+      <div class="bs-pic" data-reveal>
+        <img src="assets/brand/brightside-banner.jpg" alt="Bright Side — Neubau-Wohnprojekt im Frankfurter Gallusviertel">
+        <span class="tag">Bright Side · Gallusviertel</span>
+      </div>
     </div>
   </section>
 
@@ -542,7 +587,7 @@
         <div class="c"><div class="nr">03</div><h3>Projektvermietung</h3><p>Ganze Neubauvorhaben aus einer Hand vermarktet — von der Vermietungsstrategie bis zur Übergabe.</p></div>
         <div class="c"><div class="nr">04</div><h3>Markteinwertung</h3><p>Eine realistische, marktbasierte Einschätzung Ihrer Immobilie — die Grundlage jeder erfolgreichen Vermarktung.</p></div>
         <div class="c"><div class="nr">05</div><h3>Finanzierung</h3><p>Solide Finanzierung für Käufer — in Partnerschaft mit Interhyp, Deutschlands führendem Vermittler.</p></div>
-        <div class="c"><div class="nr">06</div><h3>After-Sales</h3><p>Wir bleiben Ihr Ansprechpartner — auch nach der Übergabe, dauerhaft und verlässlich.</p></div>
+        <div class="c"><div class="nr">06</div><h3>Büro- &amp; Ladenflächen</h3><p>Gewerbeobjekte in Frankfurts Lauflagen — vermittelt mit demselben Anspruch an Diskretion und Marktkenntnis.</p></div>
       </div>
     </div>
   </section>
@@ -732,9 +777,12 @@
         <a href="#award">Auszeichnungen</a>
         <a href="#highlight">Highlight</a>
         <a href="#referenzen">Referenzen</a>
+        <a href="#brightside">Bright Side</a>
         <a href="#person">Edin Cobic</a>
         <a href="#ki">KI-Sichtbarkeit</a>
         <a href="#kontakt">Kontakt</a>
+        <a href="https://www.bestlage360.de/downloads/" target="_blank" rel="noopener">Downloads</a>
+        <a href="https://www.bestlage360.de/stellenangebot/" target="_blank" rel="noopener">Karriere</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -778,6 +826,14 @@
       msg.scrollIntoView({behavior:REDUCE?"auto":"smooth",block:"center"});
     });
   }
+
+  // Video-Facade — YouTube wird erst beim Klick geladen
+  document.querySelectorAll('.video[data-yt]').forEach(function(v){
+    v.addEventListener('click',function(){
+      var id=v.getAttribute('data-yt');
+      v.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0" title="Objektvideo BESTLAGE360 — COBIC HOMES" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    },{once:true});
+  });
 
   (function(){
     var D={

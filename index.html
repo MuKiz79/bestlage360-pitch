@@ -24,6 +24,7 @@
   "telephone": "+49 69 788088 20",
   "faxNumber": "+49 69 788088 212",
   "priceRange": "€€€",
+  "knowsLanguage": ["Deutsch", "Englisch"],
   "areaServed": [
     { "@type": "City", "name": "Frankfurt am Main" },
     "Westend", "Diplomatenviertel", "Holzhausenviertel", "Nordend", "Ostend",
@@ -151,6 +152,26 @@
   .badge .yr{font-family:"Cormorant Garamond",serif;font-size:1.1rem;color:var(--green);font-weight:600;letter-spacing:.04em}
   .award-crit{margin-top:var(--s10);display:flex;justify-content:center;gap:14px;flex-wrap:wrap;max-width:880px;margin-left:auto;margin-right:auto}
   .crit{font-size:.82rem;color:var(--green);border:1px solid var(--line);border-radius:999px;padding:9px 18px;background:var(--card)}
+
+  /* Person — Edin Cobic */
+  #person{background:var(--cream);border-top:1px solid var(--line)}
+  .person-grid{display:grid;grid-template-columns:.76fr 1.24fr;gap:clamp(36px,5vw,76px);align-items:center;margin-top:var(--s6)}
+  .person-pic{position:relative;border-radius:6px;overflow:hidden;border:1px solid var(--line);box-shadow:0 32px 60px -42px rgba(0,36,22,.45)}
+  .person-pic::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18),inset 0 0 0 6px rgba(0,36,22,0)}
+  .person-pic img{width:100%;height:100%;object-fit:cover;display:block}
+  .person-pic .cap{position:absolute;left:18px;bottom:14px;color:#fff;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.6);padding-left:11px;border-left:2px solid var(--gold-2)}
+  .person-credo h2{font-size:clamp(2rem,3.6vw,3rem);margin-bottom:22px;max-width:18ch}
+  .person-credo h2 em{font-style:italic;color:var(--gold-deep)}
+  .person-credo p{color:var(--muted);font-size:1.05rem;max-width:56ch}
+  .person-credo p + p{margin-top:15px}
+  .person-values{display:flex;gap:10px;flex-wrap:wrap;margin:28px 0 0}
+  .pv{font-size:.8rem;color:var(--green);border:1px solid var(--line);border-radius:999px;padding:8px 16px;background:var(--card)}
+  .person-quote{margin-top:30px;padding-left:22px;border-left:2px solid var(--gold);font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.5rem;line-height:1.3;color:var(--ink)}
+  .person-quote small{display:block;font-family:"Inter",sans-serif;font-style:normal;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+  .person-sign{margin-top:30px;display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+  .person-sign .who{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:1.6rem;color:var(--green)}
+  .person-sign .role{font-size:.8rem;color:var(--muted);letter-spacing:.04em}
+  @media (max-width:880px){.person-grid{grid-template-columns:1fr;gap:32px}.person-pic{max-width:320px}}
 
   /* KI section */
   #ki{background:linear-gradient(170deg,var(--green-2),var(--green));color:var(--cream);position:relative;overflow:hidden}
@@ -336,9 +357,9 @@
     </a>
     <nav class="nav-links" aria-label="Hauptnavigation">
       <a href="#award">Auszeichnung</a>
+      <a href="#person">Edin&nbsp;Cobic</a>
       <a href="#ki">KI-Sichtbarkeit</a>
       <a href="#leistungen">Leistungen</a>
-      <a href="#wert">Wertermittlung</a>
       <a href="#brightside">Bright&nbsp;Side</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
@@ -402,12 +423,43 @@
     </div>
   </section>
 
+  <!-- PERSON / EDIN COBIC -->
+  <section id="person">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <div class="kick"><span class="num-k">02</span><span class="eyebrow">Der Mensch hinter der Marke</span></div>
+      </div>
+      <div class="person-grid">
+        <div class="person-pic" data-reveal>
+          <img src="assets/brand/cobic.jpg" alt="Edin Cobic — Inhaber von BESTLAGE360 — COBIC HOMES">
+          <span class="cap">Edin Cobic · Inhaber</span>
+        </div>
+        <div class="person-credo" data-reveal>
+          <h2>„Die Vermarktung einer Immobilie gehört in <em>professionelle Hände</em>.“</h2>
+          <p>Seit über 18 Jahren begleite ich Eigentümer und Käufer in Frankfurt und im Vordertaunus — persönlich und diskret. Eine vorgemerkte Klientel im Premium-Segment findet oft den passenden Käufer, bevor ein Objekt je ein Portal sieht.</p>
+          <p>Mein Name steht für geballte Leistung und umfassenden Service rund um Ihre Immobilie — auf Deutsch und Englisch, von der ersten Einschätzung bis weit über den Notartermin hinaus.</p>
+          <div class="person-values">
+            <span class="pv">Vertrauen</span>
+            <span class="pv">Ehrliche Beratung</span>
+            <span class="pv">Jederzeit erreichbar</span>
+            <span class="pv">Engagement über das Übliche hinaus</span>
+          </div>
+          <p class="person-quote">„Ein Makler, dem man vertrauen kann.“<small>Aus einer Google-Bewertung · 4,9 ★</small></p>
+          <div class="person-sign">
+            <span class="who">Herzlichst, Ihr Edin Cobic</span>
+            <span class="role">Inhaber · über 18 Jahre Erfahrung · Deutsch &amp; Englisch</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- KI-SICHTBARKEIT -->
   <section id="ki">
     <div class="wrap">
       <div class="ki-grid">
         <div class="ki-left" data-reveal>
-          <div class="kick"><span class="num-k">02</span><span class="eyebrow">Der entscheidende Punkt</span></div>
+          <div class="kick"><span class="num-k">03</span><span class="eyebrow">Der entscheidende Punkt</span></div>
           <h2>Sichtbar, wenn Frankfurt die KI fragt.</h2>
           <p class="lede">Immer mehr Menschen fragen heute nicht mehr Google, sondern ChatGPT oder Perplexity: „Wer ist ein guter Makler in Frankfurt?“. Damit eine KI Sie versteht und empfiehlt, müssen Auszeichnungen, Leistungen und Bewertungen <strong>maschinenlesbar</strong> hinterlegt sein — auf Ihrer heutigen Seite fehlen diese Daten, große etablierte Häuser hinterlegen sie längst.</p>
           <div class="ki-points">
@@ -446,7 +498,7 @@
   <section id="leistungen">
     <div class="wrap">
       <div class="sec-head" data-reveal>
-        <div class="kick"><span class="num-k">03</span><span class="eyebrow">Leistungen</span></div>
+        <div class="kick"><span class="num-k">04</span><span class="eyebrow">Leistungen</span></div>
         <h2>Premium-Service, von der Bewertung bis zur Übergabe.</h2>
         <p class="lede">Persönlich statt Massenbetrieb: Einzelbesichtigungen mit bonitätsgeprüften Interessenten aus dem Premium-Segment, kurze Vermarktungszeiten — und ein Ansprechpartner, der auch nach dem Notartermin bleibt.</p>
       </div>
@@ -465,7 +517,7 @@
   <section id="wert">
     <div class="wrap">
       <div class="sec-head" data-reveal>
-        <div class="kick"><span class="num-k">04</span><span class="eyebrow">Eine Seite, die mitarbeitet</span></div>
+        <div class="kick"><span class="num-k">05</span><span class="eyebrow">Eine Seite, die mitarbeitet</span></div>
         <h2>Was ist Ihre Immobilie wert?</h2>
         <p class="lede">Eine erste Einschätzung in unter einer Minute — auf Basis aktueller Frankfurter Marktdaten. Eigentümer bekommen sofort eine Orientierung, Sie den Erstkontakt.</p>
       </div>
@@ -519,7 +571,7 @@
   <section id="kollektion">
     <div class="wrap">
       <div class="sec-head" data-reveal>
-        <div class="kick"><span class="num-k">05</span><span class="eyebrow">Kollektion</span></div>
+        <div class="kick"><span class="num-k">06</span><span class="eyebrow">Kollektion</span></div>
         <h2>Ausgewählte Objekte aus den besten Lagen.</h2>
         <p class="lede">Vom sanierten Gründerzeit-Altbau bis zur Architektenvilla — präsentiert, wie eine gute Immobilie es verdient.</p>
       </div>
@@ -558,7 +610,7 @@
     <div class="wrap">
       <div class="bs-grid">
         <div data-reveal>
-          <div class="kick"><span class="num-k">06</span><span class="eyebrow">Projektvermietung</span></div>
+          <div class="kick"><span class="num-k">07</span><span class="eyebrow">Projektvermietung</span></div>
           <h2 style="font-size:clamp(2rem,3.6vw,2.9rem)">Bright Side.</h2>
           <p class="lede">Unser Neubau-Projekt im Frankfurter Gallusviertel — ein Beleg dafür, dass wir nicht nur Einzelobjekte, sondern ganze Vorhaben aus einer Hand vermarkten.</p>
           <div class="bs-facts">
@@ -582,7 +634,7 @@
     <div class="wrap">
       <div class="lagen-grid">
         <div data-reveal>
-          <div class="kick"><span class="num-k">07</span><span class="eyebrow">Marktbarometer</span></div>
+          <div class="kick"><span class="num-k">08</span><span class="eyebrow">Marktbarometer</span></div>
           <h2 style="font-size:clamp(2rem,3.4vw,2.8rem);margin-bottom:20px">Der Frankfurter Markt, nach Lage.</h2>
           <p class="lede">Frankfurt hat keinen einheitlichen Markt. Zwischen Westend und Eschersheim liegen schnell rund 2.800 €/m² — wer mit dem Stadtdurchschnitt von etwa 6.500 €/m² rechnet, liegt in den besten Lagen fast immer daneben.</p>
         </div>
@@ -605,7 +657,7 @@
   <section id="bewertungen">
     <div class="wrap">
       <div class="sec-head" data-reveal>
-        <div class="kick"><span class="num-k">08</span><span class="eyebrow">Bewertungen</span></div>
+        <div class="kick"><span class="num-k">09</span><span class="eyebrow">Bewertungen</span></div>
         <h2>Ein außergewöhnliches Vertrauen am Frankfurter Markt.</h2>
       </div>
       <div class="trust2-grid">
@@ -618,6 +670,7 @@
         <div class="seals" data-stagger>
           <div class="seal"><span class="gd"></span><div>BELLEVUE Best Property Agents<br><small>ausgezeichnet 2023 · 2024 · 2025 · 2026</small></div></div>
           <div class="seal"><span class="gd"></span><div>145 Google-Bewertungen<br><small>4,9 von 5 Sternen</small></div></div>
+          <div class="seal"><span class="gd"></span><div>Geprüfte Partnerschaften<br><small>ImmoScout24 Premium-Partner · IMMOGENO Business-Partner</small></div></div>
           <div class="seal"><span class="gd"></span><div>Inhaber Edin Cobic<br><small>Sophienstraße 43 · 60487 Frankfurt am Main</small></div></div>
         </div>
       </div>
@@ -628,7 +681,7 @@
   <section id="kontakt" class="contact">
     <div class="wrap">
       <div class="sec-head" data-reveal>
-        <div class="kick"><span class="num-k">09</span><span class="eyebrow">Kontakt</span></div>
+        <div class="kick"><span class="num-k">10</span><span class="eyebrow">Kontakt</span></div>
         <h2>Sprechen wir über Ihre Immobilie.</h2>
         <p class="lede">Ob Verkauf, Vermietung oder eine erste Einschätzung — wir nehmen uns Zeit. Am schnellsten erreichen Sie uns telefonisch.</p>
       </div>
